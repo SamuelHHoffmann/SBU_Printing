@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,112 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SBU_printting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpL-al-9dt">
+                                <rect key="frame" x="178.5" y="433" width="57" height="30"/>
+                                <state key="normal" title="click me"/>
+                                <connections>
+                                    <action selector="button_clicked:" destination="BYZ-38-t0r" eventType="touchDown" id="jXc-Dz-2fD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wpL-al-9dt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g6Q-II-Wp9"/>
+                            <constraint firstItem="wpL-al-9dt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tLH-AV-R0j"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="00k-WY-wwi" kind="show" identifier="showPrinter" id="Nhe-l4-ogF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-172" y="26"/>
+        </scene>
+        <!--Printer View Controller-->
+        <scene sceneID="Kcj-WW-uPh">
+            <objects>
+                <viewController id="00k-WY-wwi" customClass="PrinterViewController" customModule="SBU_printting" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tLj-C8-yt9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="printerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LXw-R5-Aup">
+                                <rect key="frame" x="107" y="342" width="200" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="1qc-5D-nv0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="63E-dd-Bj3"/>
+                                    <constraint firstAttribute="height" constant="212" id="9Ok-fg-uKN"/>
+                                    <constraint firstAttribute="width" constant="200" id="Rt9-f9-5oh"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBo-Hb-imc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                <color key="backgroundColor" red="0.90970492362976074" green="0.90986090898513794" blue="0.9096950888633728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="T7u-CW-oQE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-hZ-mXZ">
+                                <rect key="frame" x="0.0" y="48" width="414" height="48"/>
+                                <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="NHV-6W-P4w"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenStatus" translatesAutoresizingMaskIntoConstraints="NO" id="FgR-qa-ZHS">
+                                <rect key="frame" x="20" y="96" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZaU-xN-ePA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Printer Status:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZn-Ur-asr">
+                                <rect key="frame" x="20" y="96" width="374" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="WOa-Kb-HfA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96068006753921509" green="0.96084433794021606" blue="0.96066969633102417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EBo-Hb-imc" firstAttribute="leading" secondItem="eJp-qm-Ww8" secondAttribute="leading" id="Hup-Wn-F7N"/>
+                            <constraint firstItem="FgR-qa-ZHS" firstAttribute="top" secondItem="zTl-hZ-mXZ" secondAttribute="bottom" id="K4c-Ut-fa5"/>
+                            <constraint firstItem="eJp-qm-Ww8" firstAttribute="trailing" secondItem="uZn-Ur-asr" secondAttribute="trailing" constant="20" id="KhE-eJ-bkF"/>
+                            <constraint firstItem="zTl-hZ-mXZ" firstAttribute="top" secondItem="EBo-Hb-imc" secondAttribute="bottom" id="NEB-xt-bth"/>
+                            <constraint firstItem="EBo-Hb-imc" firstAttribute="trailing" secondItem="eJp-qm-Ww8" secondAttribute="trailing" id="QqU-Rv-ML1"/>
+                            <constraint firstItem="LXw-R5-Aup" firstAttribute="centerX" secondItem="tLj-C8-yt9" secondAttribute="centerX" id="Stx-lu-ccK"/>
+                            <constraint firstItem="eJp-qm-Ww8" firstAttribute="trailing" secondItem="FgR-qa-ZHS" secondAttribute="trailing" constant="20" id="VBz-tI-vlO"/>
+                            <constraint firstItem="uZn-Ur-asr" firstAttribute="top" secondItem="zTl-hZ-mXZ" secondAttribute="bottom" id="WeV-1M-a7e"/>
+                            <constraint firstItem="EBo-Hb-imc" firstAttribute="top" secondItem="tLj-C8-yt9" secondAttribute="top" id="XT1-Be-nfE"/>
+                            <constraint firstItem="LXw-R5-Aup" firstAttribute="centerY" secondItem="tLj-C8-yt9" secondAttribute="centerY" id="aER-Ze-VSh"/>
+                            <constraint firstItem="FgR-qa-ZHS" firstAttribute="leading" secondItem="eJp-qm-Ww8" secondAttribute="leading" constant="20" id="bVO-vr-Qt6"/>
+                            <constraint firstItem="zTl-hZ-mXZ" firstAttribute="trailing" secondItem="eJp-qm-Ww8" secondAttribute="trailing" id="fdT-0X-LHv"/>
+                            <constraint firstItem="zTl-hZ-mXZ" firstAttribute="leading" secondItem="eJp-qm-Ww8" secondAttribute="leading" id="gb3-8y-NSx"/>
+                            <constraint firstItem="uZn-Ur-asr" firstAttribute="leading" secondItem="eJp-qm-Ww8" secondAttribute="leading" constant="20" id="wB6-uW-cwi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eJp-qm-Ww8"/>
+                    </view>
+                    <connections>
+                        <outlet property="PrinterStatusImage" destination="FgR-qa-ZHS" id="g0L-sR-k8O"/>
+                        <outlet property="PrinterStatusLabel" destination="uZn-Ur-asr" id="snb-f3-AjF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1T-9B-XJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.69565217391312" y="25.446428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="greenStatus" width="341" height="46"/>
+        <image name="printerIcon" width="200" height="200"/>
+    </resources>
 </document>

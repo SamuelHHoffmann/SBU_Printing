@@ -15,6 +15,8 @@
 		90A0F6EB21FE55D0000730A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A0F6E921FE55D0000730A5 /* LaunchScreen.storyboard */; };
 		90A0F6F621FE55D0000730A5 /* SBU_printtingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0F6F521FE55D0000730A5 /* SBU_printtingTests.swift */; };
 		90A0F70121FE55D0000730A5 /* SBU_printtingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0F70021FE55D0000730A5 /* SBU_printtingUITests.swift */; };
+		90A0F70F21FE5628000730A5 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0F70E21FE5628000730A5 /* Printer.swift */; };
+		90A0F71121FE5646000730A5 /* PrinterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A0F71021FE5646000730A5 /* PrinterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		90A0F6FC21FE55D0000730A5 /* SBU printtingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SBU printtingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A0F70021FE55D0000730A5 /* SBU_printtingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBU_printtingUITests.swift; sourceTree = "<group>"; };
 		90A0F70221FE55D0000730A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90A0F70E21FE5628000730A5 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		90A0F71021FE5646000730A5 /* PrinterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				90A0F6DD21FE55CE000730A5 /* AppDelegate.swift */,
 				90A0F6DF21FE55CE000730A5 /* ViewController.swift */,
+				90A0F70E21FE5628000730A5 /* Printer.swift */,
+				90A0F71021FE5646000730A5 /* PrinterViewController.swift */,
 				90A0F6E121FE55CE000730A5 /* Main.storyboard */,
 				90A0F6E721FE55D0000730A5 /* Assets.xcassets */,
 				90A0F6E921FE55D0000730A5 /* LaunchScreen.storyboard */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A0F70F21FE5628000730A5 /* Printer.swift in Sources */,
 				90A0F6E621FE55CE000730A5 /* SBU_printting.xcdatamodeld in Sources */,
 				90A0F6E021FE55CE000730A5 /* ViewController.swift in Sources */,
+				90A0F71121FE5646000730A5 /* PrinterViewController.swift in Sources */,
 				90A0F6DE21FE55CE000730A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
