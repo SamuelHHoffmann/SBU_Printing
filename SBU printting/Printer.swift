@@ -46,21 +46,37 @@ class Printer {
     
     
     
+//    private func refreshPrinter(){
+//        if(!self.isEmpty){
+//            
+//            self.printerStatus = 0
+//            self.lastUpdate = NSDate.timeIntervalSinceReferenceDate
+//            
+//            if self.printerName == "empty" {
+//                //set printer name
+//                self.printerName = "TempEmpty"
+//                    
+//            }
+//        }else{}
+//    }
+    
+    
+    //sorry mickey for my testing
     private func refreshPrinter(){
         if(!self.isEmpty){
             var urlString = "http://"+self.printerURL+"/status.html"
-            
+
             let url = URL(string: urlString)!
-            
+
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 defer {  }
                 guard
                     let data = data,
                     error == nil,
                     let document = String(data: data, encoding: .utf8) else { return }
-                
+                    print(document)
                 //TODO: grab name
-                
+
                 if document.contains("green.jpg") {
                     DispatchQueue.main.async {
                         self.printerStatus = 0
@@ -71,13 +87,30 @@ class Printer {
                         self.printerStatus = 1
                         self.lastUpdate = NSDate.timeIntervalSinceReferenceDate
                     }
-                    
+
                 }else if document.contains("red.jpg") {
                     DispatchQueue.main.async {
                         self.printerStatus = 2
                         self.lastUpdate = NSDate.timeIntervalSinceReferenceDate
                     }
                 }
+
+                if self.printerName == "empty" {
+                    //set printer name
+                    //TODO: not sure how to make regex to find the name of the printer but I will do it.
+//                    let html = document as NSString
+//
+//
+//                    let regex = try? NSRegularExpression(pattern: "<TD id=text2>(*)<", options: .caseInsensitive)
+//
+//                    let matches = regex?.matches(in: document, options: [], range: NSRange(location: 0, length: html.length))
+//
+//                    print(matches?.count)
+//                    document.index(of: "")
+                    
+                }
+
+
             }
             task.resume()
         }else{}
@@ -105,6 +138,10 @@ class Printer {
     
     func getPrinterName() -> String{
         return printerName
+    }
+    
+    func getPrinterURL() -> String{
+        return printerURL
     }
     
 }
