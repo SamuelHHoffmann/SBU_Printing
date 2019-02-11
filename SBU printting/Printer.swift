@@ -74,41 +74,42 @@ class Printer {
                     let data = data,
                     error == nil,
                     let document = String(data: data, encoding: .utf8) else { return }
-                    print(document)
+                    //print(document)
                 //TODO: grab name
 
                 if document.contains("green.jpg") {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.sync {
                         self.printerStatus = 0
                         self.lastUpdate = NSDate.timeIntervalSinceReferenceDate
+                        
                     }
                 }else if document.contains("yellow.jpg") {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.sync {
                         self.printerStatus = 1
                         self.lastUpdate = NSDate.timeIntervalSinceReferenceDate
+                        
                     }
 
                 }else if document.contains("red.jpg") {
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.sync {
                         self.printerStatus = 2
                         self.lastUpdate = NSDate.timeIntervalSinceReferenceDate
+                        
                     }
                 }
 
                 if self.printerName == "empty" {
                     //set printer name
-                    //TODO: not sure how to make regex to find the name of the printer but I will do it.
-//                    let html = document as NSString
-//
-//
-//                    let regex = try? NSRegularExpression(pattern: "<TD id=text2>(*)<", options: .caseInsensitive)
-//
-//                    let matches = regex?.matches(in: document, options: [], range: NSRange(location: 0, length: html.length))
-//
-//                    print(matches?.count)
-//                    document.index(of: "")
-                    
+                    DispatchQueue.main.sync {
+        
+                        let topBound = document.components(separatedBy: "<TD id=text2>")
+                        let name = topBound[6].components(separatedBy: "<BR>2</TD>")[0]
+                        self.printerName = name
+                        
+                    }
                 }
+                
+                
 
 
             }
@@ -143,6 +144,8 @@ class Printer {
     func getPrinterURL() -> String{
         return printerURL
     }
+    
+    
     
 }
 

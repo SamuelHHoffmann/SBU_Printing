@@ -12,7 +12,7 @@ import UIKit
 
 class PrinterViewController: UIViewController {
 
-    private var printer = Printer()
+    public var printer = Printer()
     private var printerLoaded = false
     
     private var rotateAngle = 720
@@ -55,7 +55,7 @@ class PrinterViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         refreshPrinter(forced: false)
-        
+        self.printerNameLabel.text = self.printer.getPrinterName()
     }
     
     
@@ -63,11 +63,6 @@ class PrinterViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
-        let tempPrint = Printer(printerURL: "172.16.9.4")
-        loadPrinter(printer: tempPrint)
-        
-        self.printerNameLabel.text = self.printer.getPrinterURL()
     }
     
     private func refreshPrinter(forced: Bool){
@@ -120,7 +115,6 @@ class PrinterViewController: UIViewController {
         //loads printer info into printer view controller
         self.printer = printer
         self.printerLoaded = true
-       
         
     }
     
